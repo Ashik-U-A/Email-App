@@ -1,0 +1,266 @@
+body{
+	background: #f3f3f3;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #121215;
+}
+
+#userSpace{
+	background: #ffffff;
+	box-shadow: 0 0 10px #444444;
+	display: inline-block;
+	border-radius: 50px 20px 0 50px;
+}
+
+#userSpace #userImage{
+	background: #dce775;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	display: inline-block;
+	float: left;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+#userSpace #userImage > img{
+	max-width: 100px;
+}
+
+#userSpace #userName{
+	background: #37474f;
+	width: 300px;
+	height: 100px;
+	display: block;
+	border-radius: 50px 20px 0 50px; 
+	position: relative;
+}
+
+#userSpace #userName #nameText{
+	font-size: 30px;
+	color : #ffffff;
+	position: absolute;
+	right : 15px;
+	top: 10px;
+	font-weight: 300;
+}
+
+#userSpace #userName #signOut{
+	font-size: 15px;
+	color: #dddddd;
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	border: 1px solid #dddddd;
+	padding: 8px;
+	cursor: pointer;
+	transition: background 0.5s , color 1s;
+}
+#userSpace #userName #signOut:hover{
+	color: #37474f;
+	background: #dddddd;
+}
+
+
+#mainOptions{
+	display: inline-block;
+	width: 300px;
+	text-align: left;
+	margin-top: 30px;
+}
+#mainOptions h2{
+	font-size: 20px;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#mainOptions h1{
+	font-size: 30px;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#mainOptions #composeBtn{
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #37474f;
+	margin-top: 15px;
+	margin-left: 10px;
+	box-shadow: 0 0 10px #222222;
+	background: #37474f;
+	color: #dddddd;
+	position: relative;
+	transition: background 0.6s, color 0.6s,border-radius 0.7s;
+	cursor: pointer;
+}
+#mainOptions #composeBtn:hover{
+	border-radius: 50px;
+}
+#mainOptions #composeBtn:hover,#mainOptions #composeBtn:hover  > span:first-child{
+	background: #dddddd;
+	color:#37474f;
+}
+#mainOptions #composeBtn > span:first-child{
+	font-size: 25px;
+	font-weight: 300;
+	margin-top: 12px;
+	position: relative;
+	top: 49px;
+	background: #37474f;
+	z-index: 1;
+	transition: background 0.6s,color 0.6s;
+}
+#mainOptions #composeBtn > span:last-child{
+	display: inline-block;
+	position: relative;
+	top: 44px;
+	font-weight: 300;
+}
+#mainOptions #composeBtn > #border_in{
+	width: 70%;
+	height: 70%;
+	float: left;
+	position: absolute;
+	top: calc(15% - 1px);
+	left: calc(15% - 1px);
+	border: 1px solid #aaaaaa;
+	transition: border-radius 1.5s;
+}
+#mainOptions #composeBtn:hover > #border_in{
+	border-radius: 50px;
+}
+
+#mainOptions #inboxBtn{
+	display: inline-block;
+	width: 80px;
+	height: 150px;
+	border: 1px solid #37474f;
+	position: relative;
+	top: -26px;
+	margin-left: 10px;
+	padding: 10px;
+	text-align: center;
+	background: #546e7a;
+	color: #dddddd;
+	box-shadow: 0 0 10px #222222;
+	transition: background 0.6s, color 0.6s, border-radius 0.7s;
+}
+#mainOptions #inboxBtn:hover{
+	color: #37474f;
+	background: #dddddd;
+	border-radius: 50px;
+}
+#mainOptions #inboxBtn > span:first-child{
+	position: relative;
+	top: 50px;
+	font-size: 22px;
+	font-weight: 300;
+	background: #546e7a;
+	z-index: 1;
+	transition: background 0.6s;
+}
+#mainOptions #inboxBtn:hover > span:first-child{
+	background: #dddddd;
+}
+#mainOptions #inboxBtn > #border_in{
+	position: absolute;
+	top:calc(15% - 1px);
+	left: calc(20% - 1px);
+	width: 60%;
+	height: 70%;
+	border: 1px solid #aaaaaa;
+	transition: border-radius 1.5s;
+}
+#mainOptions #inboxBtn:hover > #border_in{
+	border-radius: 50px;
+}
+
+.leftCorner{
+	float: left;
+	width: 300px;
+}
+.rightCorner{
+	float: right;
+	width: calc(100% - 350px);
+	height: 100%;
+	display: inline-block;
+}
+
+#composeMailPage{
+	background: #ffffff;
+	box-shadow: 0 0 10px #333333;
+	width:100%;
+	height: 100%;
+	max-width: 600px;
+	border-radius: 50px 0 0 0;
+}
+#composeMailPage #heading{
+	width: 100%;
+	height: 100px;
+	border-radius: 50px 0 0 0;
+}
+#composeMailPage #heading > #title{
+	background: #37474f;
+	display: inline-block;
+	height: calc(100% - 30px);
+	width: 200px;
+	color: #dddddd;
+	font-size: 30px;
+	font-weight: 300;
+	padding: 30px 0px 0 30px;
+	border-radius: 50px 0 50px 0px;
+}
+#composeMailPage #heading > #subject{
+	display: inline-block;
+	width: calc(100% - 240px);
+	text-align: right;
+	font-size: 20px;
+	color: #37474f;
+}
+#composeMailPage #content{
+	width: 100%;
+}
+#composeMailPage #content .recepients,.cc_recepients,.bcc_recepients,.subject{
+	padding: 3px 10px;
+}
+#composeMailPage #content .recepients > input{
+	border: 0;
+	border-bottom: 1px solid #aaaaaa;
+	padding: 10px 2px;
+	margin-left: 20px;
+	width: 430px;
+}
+#composeMailPage #content .cc_recepients > input{
+	border: 0;
+	border-bottom: 1px solid #aaaaaa;
+	padding: 10px 2px;
+	margin-left: 34px;
+	width: 430px;
+}
+#composeMailPage #content .bcc_recepients > input{
+	border: 0;
+	border-bottom: 1px solid #aaaaaa;
+	padding: 10px 2px;
+	margin-left: 25px;
+	width: 430px;
+}
+#composeMailPage #content .subject > input{
+	border: 0;
+	border-bottom: 1px solid #aaaaaa;
+	padding: 10px 2px;
+	margin-left: 80px;
+	width: 430px;
+}
+#composeMailPage #content .mailBody{
+	padding: 20px 10px 10px 10px;
+}
+#composeMailPage #content .mailBody #mailBody{
+	height: 300px;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	overflow-y:auto; 
+}

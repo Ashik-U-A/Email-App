@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email App</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Stylesheet/main.css">
+	<script type="text/javascript" src="Javascript/angular.js"></script>
+	<script type="text/javascript" src="Javascript/main.js"></script>
+</head>
+<body ng-app="mainWindow">
+	<div class="leftCorner">
+		<div id="userSpace">
+			<div id="userImage">
+<!-- 				<img src="images/userImage.png">
+ -->			</div>
+			<div id="userName">
+				<span id="nameText">Ashik Unni A</span>
+				<div id="signOut">S I G N - O U T</div>
+			</div>
+		</div>
+		<div id="mainOptions">
+			<h2>What you really need are the</h2>
+			<h1>M A I N - O P T I O N S</h1>
+			<div id="composeBtn">
+				<span>C O M P O S E</span>
+				<div id="border_in"></div>
+				<span>A NEW MAIL</span>
+			</div>
+			<div id="inboxBtn">
+				<span>I N B O X</span>
+				<div id="border_in"></div>
+			</div>
+		</div>
+	</div>
+	<div class="rightCorner">
+		<div id="composeMailPage">
+			<div id="heading">
+				<span id="title">C O M P O S E</span>
+				<span id="subject">{{subject}}</span>
+			</div>
+			<div id="content">
+				<div class="recepients">
+					<span>Send this mail to : </span>
+					<input type="text" id="recepients">
+				</div>
+				<div class="cc_recepients">
+					<span>CC this mail to : </span>
+					<input type="text" id="cc_recepients">
+				</div>
+				<div class="bcc_recepients">
+					<span>BCC this mail to : </span>
+					<input type="text" id="bcc_recepients">
+				</div>
+				<div class="subject">
+					<span>Subject : </span>
+					<input type="text" ng-model="subject" id="subject">
+				</div>
+				<div class="mailBody">
+					<div id="mailBody" contenteditable='true'>
+						dsodifhsdofih
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
