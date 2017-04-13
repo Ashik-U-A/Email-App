@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="Javascript/angular.js"></script>
 	<script type="text/javascript" src="Javascript/main.js"></script>
 </head>
-<body ng-app="mainWindow">
+<body ng-app="mainWindow" ng-controller="mainWindowController as main" onresize="{var inbox = document.getElementsByClassName('rightCorner')[0];console.log(window.innerHeight);inbox.style.height = window.innerHeight - 35 + 'px';}">
 	<div class="leftCorner">
 		<div id="userSpace">
 			<div id="userImage">
@@ -21,27 +21,28 @@
 		<div id="mainOptions">
 			<h2>What you really need are the</h2>
 			<h1>M A I N - O P T I O N S</h1>
-			<div id="composeBtn">
+			<div id="composeBtn" ng-click="main.toggleComposeMail()">
 				<span>C O M P O S E</span>
 				<div id="border_in"></div>
 				<span>A NEW MAIL</span>
 			</div>
-			<div id="inboxBtn">
+			<div id="inboxBtn" ng-click="main.toggleInbox()">
 				<span>I N B O X</span>
 				<div id="border_in"></div>
 			</div>
 		</div>
 	</div>
 	<div class="rightCorner">
-		<div id="composeMailPage">
+	<!-- Compose Mail Section -->
+		<div id="composeMailPage" ng-controller="sendMailController as ctrl" ng-show="main.composeMailFlag">
 			<div id="heading">
 				<span id="title">C O M P O S E</span>
-				<span id="subject">{{subject}}</span>
+				<span id="subject">{{ctrl.subject}}</span>
 			</div>
-			<div id="content">
+			<div id="content"><form name="composeMailForm">
 				<div class="recepients">
 					<span>Send this mail to : </span>
-					<input type="text" id="recepients">
+					<input type="email" id="recepients" ng-model="recepients" name="recepients" required>
 				</div>
 				<div class="cc_recepients">
 					<span>CC this mail to : </span>
@@ -53,15 +54,36 @@
 				</div>
 				<div class="subject">
 					<span>Subject : </span>
-					<input type="text" ng-model="subject" id="subject">
+					<input type="text" ng-model="ctrl.subject" id="subject">
 				</div>
 				<div class="mailBody">
-					<div id="mailBody" contenteditable='true'>
-						dsodifhsdofih
+					<div id="mailBody" contenteditable='true' subject-filled required ng-model="body">
+						
 					</div>
+				</div>
+				<input id="sendButton" type="submit" name="" value="S E N D" ng-disabled="composeMailForm.recepients.$invalid">
+			</form></div>
+		</div>
+	<!-- Inbox Section -->
+		<div id="inboxPage" ng-controller="inboxController as ctrl" ng-show="main.inboxFlag">
+			<div class="column">
+				<div class="mail" ng-repeat="mails in oddMail" ng-click="ctrl.openMail($event,mails)">
+					<div id="subject" class="{{mails.checked}}">		{{mails.subject}}
+						<div id="sender">{{mails.sender}}</div>
+					</div>
+					<div id="body">{{mails.message}}</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="mail" ng-repeat="mails in evenMail" ng-click="ctrl.openMail($event,mails)">
+					<div id="subject" class="{{mails.checked}}">		{{mails.subject}}
+						<div id="sender">{{mails.sender}}</div>
+					</div>
+					<div id="body">{{mails.message}}</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div style="clear: both"></div>
 </body>
 </html>

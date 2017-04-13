@@ -186,17 +186,17 @@ body{
 .rightCorner{
 	float: right;
 	width: calc(100% - 350px);
-	height: 100%;
-	display: inline-block;
+	overflow-y: auto;
+	display: block;
 }
 
 #composeMailPage{
 	background: #ffffff;
 	box-shadow: 0 0 10px #333333;
 	width:100%;
-	height: 100%;
 	max-width: 600px;
 	border-radius: 50px 0 0 0;
+	margin: 10px;
 }
 #composeMailPage #heading{
 	width: 100%;
@@ -223,6 +223,7 @@ body{
 }
 #composeMailPage #content{
 	width: 100%;
+	position: relative;
 }
 #composeMailPage #content .recepients,.cc_recepients,.bcc_recepients,.subject{
 	padding: 3px 10px;
@@ -233,6 +234,9 @@ body{
 	padding: 10px 2px;
 	margin-left: 20px;
 	width: 430px;
+}
+#composeMailPage #content .recepients > input.ng-invalid.ng-dirty{
+	border-bottom:2px solid #ee0000;
 }
 #composeMailPage #content .cc_recepients > input{
 	border: 0;
@@ -263,4 +267,73 @@ body{
 	border: 1px solid #dddddd;
 	padding: 5px;
 	overflow-y:auto; 
+}
+#composeMailPage #sendButton{
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	bottom: 0px;
+	right: -95px;
+	z-index: 2;
+	border-radius: 50px;
+	border: 1px solid #37474f;
+	box-shadow: 0 0 10px #000;
+	font-family: 'Roboto Condensed',sans-serif;	
+	font-size: 18px;
+	color: #dddddd;
+	background: #37474f;
+}
+#composeMailPage #sendButton[disabled='disabled']{
+	background: #dddddd;
+	color: #aaaaaa;
+}
+
+
+#inboxPage .column{
+	max-width: 470px;
+	float: left;
+}
+#inboxPage .mail{
+	display: inline-block;
+	background: #fefefe;
+	box-shadow: 0 0 10px #000;
+	width: 450px;
+	margin: 10px;
+	cursor: pointer;
+}
+#inboxPage .mail #subject{
+	font-size: 18px;
+	padding: 10px;
+	display: block;
+}
+#inboxPage .mail #subject.checked-true{
+	color: #37474f;
+	opacity: 0.7;
+}
+#inboxPage .mail #subject.checked-false{
+	color: #dddddd;
+	background: #37474f;
+}
+#inboxPage .mail #sender{
+	font-size: 13px;
+	text-align: right;
+}
+#inboxPage .mail #body{
+	height:0px;
+	width: calc(100% - 20px);
+	transition: height 1s,padding 0.3s,opacity 0.3s;
+	overflow: hidden;
+	white-space: pre-line;
+	word-wrap: break-word;
+	padding: 0px;
+	border-top: 1px solid #37474f;
+	opacity: 0;
+}
+#inboxPage .mail.active #subject{
+	opacity: 1;
+}
+#inboxPage .mail.active #body{
+	padding: 10px;
+	height: unset;
+	opacity: 1;
 }
